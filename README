@@ -1,9 +1,9 @@
 FAT-CAT is an open-source project of the Sjolander Lab at UC Berkeley.
-FAT-CAT stands for Fast Approximate Tree ClassifiCATion and implements an HMM based  method to place a sequence within an existing phylogenetic tree.
+FAT-CAT stands for Fast Approximate Tree ClassifiCATion and implements an HMM based method to place a sequence within an existing phylogenetic tree.
 
-The main developers are:
+The project is supervised by Kimmen Sjolander, (Dept.of Bioengineering and Dept. of Plant and Microbial Biology)
+
+The main developers so far are:
   Shailen Tuli (shailen.tuli@gmail.com)
   Grant Shoffner (gmshoffner@gmail.com)
-
-The project is supervised by Kimmen Sjolander, (Dept.of Bioengineering and Dept. of Plant and Microbial Biology)  
 
