@@ -17,9 +17,11 @@ def build_msa(node, sequence_msa_map):
 
 def treewalker(root, sequence_msa_map):
     msa_file_name = build_msa(root, sequence_msa_map)
-    for clade in root.clades:
-        treewalker(clade, sequence_msa_map)
-    return
+    if not root.clades:
+        return
+    else:
+        for clade in root.clades:
+            treewalker(clade, sequence_msa_map)
 
 def main():
     tree_file = "sample_tree.ml"
@@ -35,8 +37,6 @@ def main():
     sequence_msa_map = {}
     for entry in msa:
         sequence_msa_map[entry.id] = entry
-
-    print tree
     
     treewalker(tree.root, sequence_msa_map)
     
