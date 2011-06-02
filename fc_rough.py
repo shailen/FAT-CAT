@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# Shailen and Grant's Excellent Adventure
 
 from Bio import Phylo, AlignIO
 from Bio.Align import MultipleSeqAlignment
@@ -23,8 +22,6 @@ def treewalker(root, sequence_msa_map):
     return
 
 def main():
-    """Shailen and Grant's totally radical main function."""
-    
     tree_file = "sample_tree.ml"
     msa_file = "sample_alignment.msa"
     new_sequence_file = "new_sequence.fasta"
