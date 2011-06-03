@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+import os.path, subprocess
+
 from Bio import Phylo, AlignIO
 from Bio.Align import MultipleSeqAlignment
 
@@ -15,8 +17,17 @@ def build_msa(node, sequence_msa_map):
     AlignIO.write(alignments, file_handle, 'stockholm')
     return file_name
 
+def build_hmm(msa_file_name):
+    file_prefix = os.path.splitext(msa_file_name)[0]
+    hmm_file_name = ''.join([file_prefix, '.hmm'])
+    process_name = "hmmbuild %s %s" % (hmm_file_name, msa_file_name) 
+    process = subprocess.Popen(process_name, shell = True)
+    process.wait()
+    return hmm_file_name
+
 def treewalker(root, sequence_msa_map):
     msa_file_name = build_msa(root, sequence_msa_map)
+    hmm_file_name = build_hmm(msa_file_name)
     if not root.clades:
         return
     else:
